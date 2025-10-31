@@ -2,6 +2,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 import { Container, Button, Stack } from 'react-bootstrap'
 import Home from './pages/Home'
 import Work from './pages/Work'
+import HomeDiary from './pages/HomeDiary'
 
 function App() {
   const navigate = useNavigate()
@@ -20,7 +21,7 @@ function App() {
           </Stack>
         </Container>
       } />
-      <Route path="/home" element={<Home />} />
+      <Route path="/home" element={<HomeDiary />} />
       <Route path="/work" element={<Work />} />
     </Routes>
   )
