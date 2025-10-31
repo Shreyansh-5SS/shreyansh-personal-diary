@@ -39,9 +39,9 @@ const AnimeList = () => {
   };
 
   return (
-    <Container className="py-4">
+    <div>
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <h1>My Anime List</h1>
+        <h2>My Anime List</h2>
         <Button onClick={() => setShowModal(true)}>Add Anime</Button>
       </div>
 
@@ -113,7 +113,7 @@ const AnimeList = () => {
           </Modal.Footer>
         </Form>
       </Modal>
-    </Container>
+    </div>
   );
 };
 

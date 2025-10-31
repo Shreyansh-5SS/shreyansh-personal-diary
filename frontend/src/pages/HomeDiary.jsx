@@ -111,9 +111,9 @@ const HomeDiary = () => {
   };
 
   return (
-    <Container className="py-4">
+    <div>
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <h1>My Diary</h1>
+        <h2>My Diary</h2>
         <Button onClick={() => setShowModal(true)}>Add Entry</Button>
       </div>
 
@@ -181,7 +181,7 @@ const HomeDiary = () => {
           </Modal.Footer>
         </Form>
       </Modal>
-    </Container>
+    </div>
   );
 };
 

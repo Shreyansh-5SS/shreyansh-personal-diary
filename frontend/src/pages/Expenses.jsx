@@ -96,9 +96,9 @@ const Expenses = () => {
   };
 
   return (
-    <Container className="py-4">
+    <div>
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <h1>My Expenses</h1>
+        <h2>My Expenses</h2>
         <Button onClick={() => setShowModal(true)}>Add Expense</Button>
       </div>
 
@@ -213,7 +213,7 @@ const Expenses = () => {
           </Modal.Footer>
         </Form>
       </Modal>
-    </Container>
+    </div>
   );
 };
 

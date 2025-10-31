@@ -1,10 +1,12 @@
-import { Routes, Route, useNavigate } from 'react-router-dom'
+import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import { Container, Button, Stack } from 'react-bootstrap'
-import Home from './pages/Home'
-import Work from './pages/Work'
 import HomeDiary from './pages/HomeDiary'
 import AnimeList from './pages/AnimeList'
 import Expenses from './pages/Expenses'
+import HomeLayout from './layouts/HomeLayout'
+import WorkLayout from './layouts/WorkLayout'
+import WorkPortfolio from './pages/WorkPortfolio'
+import WorkDesk from './pages/WorkDesk'
 
 function App() {
   const navigate = useNavigate()
@@ -14,29 +16,30 @@ function App() {
       <Route path="/" element={
         <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: '100vh' }}>
           <Stack direction="horizontal" gap={4}>
-            <Stack gap={4}>
-              <Button size="lg" onClick={() => navigate('/home')} style={{ width: '150px', height: '150px', fontSize: '24px' }}>
-                HOME
-              </Button>
-              <Button size="lg" onClick={() => navigate('/anime')} style={{ width: '150px', height: '150px', fontSize: '20px' }}>
-                ANIME
-              </Button>
-            </Stack>
-            <Stack gap={4}>
-              <Button size="lg" onClick={() => navigate('/work')} style={{ width: '150px', height: '150px', fontSize: '24px' }}>
-                WORK
-              </Button>
-              <Button size="lg" onClick={() => navigate('/expenses')} style={{ width: '150px', height: '150px', fontSize: '20px' }}>
-                EXPENSES
-              </Button>
-            </Stack>
+            <Button size="lg" onClick={() => navigate('/home')} style={{ width: '150px', height: '150px', fontSize: '24px' }}>
+              HOME
+            </Button>
+            <Button size="lg" onClick={() => navigate('/work')} style={{ width: '150px', height: '150px', fontSize: '24px' }}>
+              WORK
+            </Button>
           </Stack>
         </Container>
       } />
-      <Route path="/home" element={<HomeDiary />} />
-      <Route path="/work" element={<Work />} />
-      <Route path="/anime" element={<AnimeList />} />
-      <Route path="/expenses" element={<Expenses />} />
+      
+      {/* Home section with nested routes */}
+      <Route path="/home" element={<HomeLayout />}>
+        <Route index element={<Navigate to="/home/diary" replace />} />
+        <Route path="diary" element={<HomeDiary />} />
+        <Route path="anime" element={<AnimeList />} />
+        <Route path="expenses" element={<Expenses />} />
+      </Route>
+
+      {/* Work section */}
+      <Route path="/work" element={<WorkLayout />}>
+        <Route index element={<Navigate to="/work/portfolio" replace />} />
+        <Route path="portfolio" element={<WorkPortfolio />} />
+        <Route path="desk" element={<WorkDesk />} />
+      </Route>
     </Routes>
   )
 }

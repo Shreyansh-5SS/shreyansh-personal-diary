@@ -104,11 +104,13 @@ const diaryRoutes = require('./routes/diary');
 const uploadRoutes = require('./routes/uploads');
 const animeRoutes = require('./routes/anime');
 const expensesRoutes = require('./routes/expenses');
+const tasksRoutes = require('./routes/tasks');
 
 app.use('/api/diary', diaryRoutes);
 app.use('/api/uploads', uploadRoutes);
 app.use('/api/anime', animeRoutes);
 app.use('/api/expenses', expensesRoutes);
+app.use('/api/tasks', tasksRoutes);
 
 // Basic routes
 app.get('/', (req, res) => {
