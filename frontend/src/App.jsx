@@ -3,6 +3,7 @@ import { Container, Button, Stack } from 'react-bootstrap'
 import HomeDiary from './pages/HomeDiary'
 import AnimeList from './pages/AnimeList'
 import Expenses from './pages/Expenses'
+import Timetable from './pages/Timetable'
 import HomeLayout from './layouts/HomeLayout'
 import WorkLayout from './layouts/WorkLayout'
 import WorkPortfolio from './pages/WorkPortfolio'
@@ -32,6 +33,7 @@ function App() {
         <Route path="diary" element={<HomeDiary />} />
         <Route path="anime" element={<AnimeList />} />
         <Route path="expenses" element={<Expenses />} />
+        <Route path="timetable" element={<Timetable />} />
       </Route>
 
       {/* Work section */}

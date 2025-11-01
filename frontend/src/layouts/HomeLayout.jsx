@@ -33,6 +33,13 @@ const HomeLayout = () => {
             >
               Expenses
             </Nav.Link>
+            <Nav.Link 
+              as={Link} 
+              to="/home/timetable"
+              active={location.pathname === '/home/timetable'}
+            >
+              Timetable
+            </Nav.Link>
           </Nav>
         </Col>
 
